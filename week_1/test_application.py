@@ -1,14 +1,21 @@
 from application import *
 import pytest
 
-@pytest.mark.parametrize("num, expected", [[5, 120],
+def getData():
+    return [[5, 120],
 [6, 720],
 [1, 1],
 [2, 2],
 [3, 6],
-[4, 24]])
-def test_f3_f4(num, expected):
+[4, 24]]
+
+
+@pytest.mark.parametrize("num, expected", getData())
+def test_f3(num, expected):
     assert f3(num) == expected
+
+@pytest.mark.parametrize("num, expected", getData())
+def test_f4(num, expected):
     assert f4(num) == expected
 
 def test_f5():
