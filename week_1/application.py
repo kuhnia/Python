@@ -30,9 +30,8 @@ def f7(s):
     tpl = []
     for i in s:
         if(i.isdigit()):
-            tpl.append(i)
-        tuple(tpl)
-    return tpl
+            tpl.append(int(i))
+    return tuple(tpl)
 
 def f8(s):
     lst = []
@@ -65,7 +64,7 @@ def f10(s):
             words[count] += i
         else:
             prev = True
-    return set(words)
+    return sorted(list(set(words)))
 
 
 def f11(s):
@@ -88,6 +87,7 @@ def f11(s):
             numeric.append(num)
     return numeric
 
+
 def f12(a):
     forSum = []
     for i in range(4):
@@ -102,13 +102,13 @@ def f13(s):
         return "Кількість символів повинна бути в межах від 6 до 12 включно"
     aToZ = False
     zeroToNine = False
-    AtoZ = False
     specSym = False
+    bigAToZ = False
     for i in s:
         if i.islower():
             aToZ = True
         elif i.isupper():
-            AToZ = True
+            bigAToZ = True
         elif i.isdigit():
             zeroToNine = True
         elif i == "$" or i == "#" or i == "@":
@@ -117,7 +117,7 @@ def f13(s):
             return "Вводьте лише лише латинські символи у верхньому і нижньому регістрі, а також цифри і $ # @"
     if not aToZ:
         return "Пароль повинен містити хочаб одну маленьку літеру"
-    if not aToZ:
+    if not bigAToZ:
         return "Пароль повинен містити хочаб одну велику літеру"
     if not zeroToNine:
         return "Пароль має містити хочаб одну цифру"
@@ -171,15 +171,14 @@ def f16(s):
         dictionary[i] = s.count(i)
     return dictionary
 
-#print(f16('''Вот дом,
-#Который построил Джек.
-#А это пшеница,
-#Которая в темном чулане хранится
-#В доме,
-#Который построил Джек.
-#А это веселая птица-синица,
-#Которая часто ворует пшеницу,
-#Которая в темном чулане хранится
-#В доме,
-#Который построил Джек.'''))  
+print(f16('''Вот дом,
+Который построил Джек.
+А это пшеница,
+Которая в темном чулане хранится
+В доме,
+Который построил Джек.
+А это веселая птица-синица,
+Которая часто ворует пшеницу,
+Которая в темном чулане хранитсяВ доме,
+Который построил Джек.'''))  
 
