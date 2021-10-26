@@ -4,7 +4,6 @@ from MyCustomFind import *
 import pytest_mock
 
 
-
 def test_parse_args():
     input = ["-images", "D:\\"]
     expected = Namespace(duplicates=False, large=False, size=None, images=True, old=False, path='D:\\', o=None)

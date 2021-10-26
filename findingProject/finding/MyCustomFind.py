@@ -3,6 +3,7 @@ import argparse#Бібліотека для роботи з консольним
 import filecmp#Бібліотека для порівняння файлів і каталогів
 import time#Бібліотека для роботи з часом
 
+
 def parse_args(args):
     parser = argparse.ArgumentParser()#Створення об'єкту, який відповідає за парсинг команд
 
